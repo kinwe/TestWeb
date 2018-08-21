@@ -10,8 +10,8 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
-	c.Data["Website"] = "kinwe"
-	c.Data["Email"] = "huxin304@gmail.com"
+	c.Data["Website"] = ""
+	c.Data["Email"] = ""
 	c.TplName = "test.html"
 }
 
@@ -32,5 +32,7 @@ func (this *ObjectController) Post() {
 	username := this.GetString("username")
 	password := this.GetString("password")
 	fmt.Println(username, password)
+	this.Data["Website"] = username
+	this.Data["Email"] = password
 	this.TplName = "test.html"
 }
