@@ -36,3 +36,12 @@ func (this *ObjectController) Post() {
 	this.Data["Email"] = password
 	this.TplName = "test.html"
 }
+
+type ConsoleController struct {
+	beego.Controller
+}
+//实现Post方法
+func (this *ConsoleController) Get() {
+
+	this.TplName = "console.html"
+}
